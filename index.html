@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bruck的导航</h1>
+      <span class="time"></span>
+    </header>
+    <main
+      style="
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+      "
+    >
+      <h3>今日运势</h3>
+      <div class="box">
+        <span>
+          <span>今天是：</span
+          ><select name="" id="">
+            <option>星期一</option>
+            <option>星期二</option>
+            <option>星期三</option>
+            <option>星期四</option>
+            <option>星期五</option>
+            <option>星期六</option>
+            <option>星期日</option>
+          </select></span
+        >
+        <h4>来抽个奖吧：</h4>
+        <div>
+          您今天的运势是：<button class="start">开始抽奖</button>
+          <div class="qs"></div>
+        </div>
+      </div>
+      <br />
+      <div class="input">
+        <input class="shuRuKuang" type="text" placeholder="当前最重要的事?" />
+        <button class="import1">✔</button>
+      </div>
+      <br />
+      <div class="cssDaoHang">全概览</div>
+      <br />
+      <a
+        class="zongLan"
+        href="https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap"
+        target="_blank"
+        >康文昌前端JavaScript基础总览</a
+      >
+      <div class="cssDaoHang">绿色地狱</div>
+      <div>
+        <a
+          class="boxshadom"
+          href="https://baijiahao.baidu.com/s?id=1719943943677996645&wfr=spider&for=pc"
+          target="_blank"
+          >制作一览表</a
+        >
+        <div>
+          给该页面点赞<button onclick="clickZan()" class="dianZan">0</button>
+        </div>
+      </div>
+      <br />
+      <div>
+        <a class="icon" href="https://www.iconfont.cn/" target="_blank"
+          >CSS ICON图标库</a
+        >
+      </div>
+      <br />
+      <br />
+
+      <div><a class="ico" href="https://www.bitbug.net/">图片转ICO工具</a></div>
+      <div><a href=""></a></div>
+      <div><a href=""></a></div>
+      <div><a href=""></a></div>
+      <div><a href=""></a></div>
+    </main>
+    <foot>
+      <div class="foot">
+        <p>我的网站</p>
+        <p><a href="#">友情链接</a></p>
+      </div>
+    </foot>
+    <script>
+      function clickZan() {
+        let dianZan = document.querySelector(".dianZan");
+        let a = parseInt(dianZan.innerText);
+        console.log(a);
+        let b = a + 1;
+        console.log(b);
+        dianZan.innerHTML = b;
+      }
+      let timeID = 0;
+      let random = 0;
+      let miao = 0;
+      const qs = document.querySelector(".qs");
+      // 获取按钮
+      const start = document.querySelector(".start");
+      const arr = ["幸运", "非常幸运", "大大的幸运", "一般"];
+      start.addEventListener("click", function () {
+        timeID = setInterval(function () {
+          random = parseInt(Math.random() * arr.length);
+          qs.innerHTML = arr[random];
+          miao++;
+          if (miao == 5) {
+            clearInterval(timeID);
+            miao = 0;
+          }
+        }, 300);
+      });
+      // 获取当前时间
+      const Timed = new Date();
+      const time = document.querySelector(".time");
+      const mouth = Timed.getMonth();
+      time.innerHTML = `今天是${Timed.getFullYear()}年${
+        mouth + 1
+      }月${Timed.getDate()}日`;
+      // 1.获取大盒子和小盒子和按钮
+      // 1.1 获取大盒子
+      const input = document.querySelector(".input");
+      // 1.2获取小盒子输入框
+      const shuRuKuang = document.querySelector(".shuRuKuang");
+      // 1.3获取按钮
+      const btn = document.querySelector(".import1");
+      // 2.按钮点击事件
+      // 2.1首先设置按钮状态，原始值为false
+      let status = false;
+      // 2.2按钮点击函数
+      btn.addEventListener("click", function (e) {
+        if (status) {
+          status = false;
+          // 点击之后，返回为X
+          btn.innerHTML = "√";
+          // 输入框变为可编辑
+          shuRuKuang.readOnly = false;
+          // 清空输入框的值
+          shuRuKuang.value = "";
+          // 移除存储的localStorage的key和vlaue值
+          window.localStorage.removeItem("shi");
+        } else {
+          status = true;
+          // 点击之后，立马变X
+          btn.innerHTML = "X";
+          // 输入框只读，不可编辑
+          shuRuKuang.readOnly = true;
+          // 将shuRuKuang.value作为值存到shi（localStorage）里面去
+          window.localStorage.setItem("shi", shuRuKuang.value);
+        }
+      });
+      let data = window.localStorage.getItem("shi");
+      if (data) {
+        // 输入框里面的值从localStorage里面调出来
+        document.querySelector(".shuRuKuang").value = data;
+        // 再次触发
+        btn.click();
+      }
+    </script>
+  </body>
+</html>
