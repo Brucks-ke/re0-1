@@ -1,0 +1,74 @@
+body {
+  background-image: url(../images/background-img/background-img.jpg);
+}
+header {
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+main {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.boxshadom {
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-image: url(../images/background-img/tools.png);
+}
+.cssDaoHang {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100px;
+}
+.zongLan {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-image: url(../images/background-img/qianDuan.jpg);
+}
+.icon {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-image: url(../images/background-img/icon_214x134.jpg);
+}
+.ico {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-image: url(../images/background-img/ico.png);
+}
+h3 {
+  text-align: center;
+  margin: 0 auto;
+}
+.box {
+  text-align: center;
+  margin: 0 auto;
+}
+.qs {
+  color: red;
+}
+header h1 {
+  display: inline-block;
+  position: relative;
+}
+.time {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+}
+body foot div.foot {
+  text-align: center;
+}
