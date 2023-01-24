@@ -48,34 +48,59 @@
       <br />
       <div class="cssDaoHang">全概览</div>
       <br />
-      <a
-        class="zongLan"
-        href="https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap"
-        target="_blank"
-        >康文昌前端JavaScript基础总览</a
-      >
+      <div class="div2 a1" style="display: inline-block;">
+        <a
+          class="zongLan"
+          href="https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap"
+          target="_blank"
+        ></a>
+        <span class="mask"></span>
+        <span class="title">康文昌前端JavaScript基础总览</span>
+      </div>
       <div class="cssDaoHang">绿色地狱</div>
       <div>
-        <a
+        <!-- <a
           class="boxshadom"
           href="https://baijiahao.baidu.com/s?id=1719943943677996645&wfr=spider&for=pc"
           target="_blank"
           >制作一览表</a
-        >
+        > -->
+        <div class="div2 a2" style="display: inline-block";>
+          <a
+            class="boxshadom"
+            href="https://baijiahao.baidu.com/s?id=1719943943677996645&wfr=spider&for=pc"
+            target="_blank"
+          ></a>
+          <span class="mask"></span>
+          <span class="title">制作一览表</span>
+        </div>
         <div>
           给该页面点赞<button onclick="clickZan()" class="dianZan">0</button>
         </div>
       </div>
       <br />
       <div>
-        <a class="icon" href="https://www.iconfont.cn/" target="_blank"
+        <!-- <a class="icon" href="https://www.iconfont.cn/" target="_blank"
           >CSS ICON图标库</a
-        >
+        > -->
+        <div class="div2 a3" style="display: inline-block";>
+          <a class="icon" href="https://www.iconfont.cn/" target="_blank"></a>
+          <span class="mask"></span>
+          <span class="title">CSS ICON图标库</span>
+        </div>
       </div>
       <br />
       <br />
-
-      <div><a class="ico" href="https://www.bitbug.net/">图片转ICO工具</a></div>
+      <div class="div2 a4" style="display: inline-block";>
+        <a
+          class="ico"
+          href="https://www.bitbug.net/"
+          target="_blank"
+        ></a>
+        <span class="mask"></span>
+        <span class="title">图片转ICO工具</span>
+      </div>      
+      <!-- <div><a class="ico" href="https://www.bitbug.net/">图片转ICO工具</a></div> -->
       <div><a href=""></a></div>
       <div><a href=""></a></div>
       <div><a href=""></a></div>
@@ -160,6 +185,25 @@
         // 再次触发
         btn.click();
       }
+      // 获取标签
+      const a1 = document.querySelector(".a1");
+      a1.addEventListener("click", function (e) {
+        window.location.href =
+          "https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap";
+      });
+      const a2 = document.querySelector(".a2");
+      a2.addEventListener("click", function (e) {
+        window.location.href =
+          "https://baijiahao.baidu.com/s?id=1719943943677996645&wfr=spider&for=pc";
+      });
+      const a3 = document.querySelector(".a3");
+      a3.addEventListener("click", function (e) {
+        window.location.href = "https://www.iconfont.cn/";
+      });
+      const a4 = document.querySelector(".a4");
+      a4.addEventListener("click", function (e) {
+        window.location.href = "https://www.bitbug.net/";
+      });
     </script>
   </body>
 </html>
