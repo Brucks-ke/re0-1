@@ -48,15 +48,36 @@
       <br />
       <div class="cssDaoHang">全概览</div>
       <br />
-      <div class="div2 a1" style="display: inline-block;">
-        <a
-          class="zongLan"
-          href="https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap"
-          target="_blank"
-        ></a>
-        <span class="mask"></span>
-        <span class="title">康文昌前端JavaScript基础总览</span>
+
+      <div style="display: inline-block">
+        <span class="a1">
+          <span class="div2" style="display: inline-block">
+            <a
+              class="zongLan"
+              href="https://metaisland.feishu.cn/mindnotes/bmncnVm87LbPlQF0jigDuSegubd#mindmap"
+              target="_blank"
+            ></a>
+            <span class="mask"></span>
+            <span class="title">康文昌前端JavaScript基础总览</span>
+          </span>
+        </span>
+        <span class="s2">
+          <span>
+            <div style="font-weight: 800; text-align: center">
+              二进制转十进制计算器
+            </div>
+            请输入你需要转换的值: &nbsp;<input
+              class="va"
+              type="number"
+              oninput="this.value=this.value.replace(/[^0-1]/g, '')"
+            />
+            <button class="btnSum">提交</button>
+            <br />
+            <span>你的运算结果为：<span class="put"></span> </span>
+          </span>
+        </span>
       </div>
+      <br />
       <div class="cssDaoHang">绿色地狱</div>
       <div>
         <!-- <a
@@ -65,7 +86,7 @@
           target="_blank"
           >制作一览表</a
         > -->
-        <div class="div2 a2" style="display: inline-block";>
+        <div class="div2 a2" style="display: inline-block" ;>
           <a
             class="boxshadom"
             href="https://baijiahao.baidu.com/s?id=1719943943677996645&wfr=spider&for=pc"
@@ -83,7 +104,7 @@
         <!-- <a class="icon" href="https://www.iconfont.cn/" target="_blank"
           >CSS ICON图标库</a
         > -->
-        <div class="div2 a3" style="display: inline-block";>
+        <div class="div2 a3" style="display: inline-block" ;>
           <a class="icon" href="https://www.iconfont.cn/" target="_blank"></a>
           <span class="mask"></span>
           <span class="title">CSS ICON图标库</span>
@@ -91,15 +112,11 @@
       </div>
       <br />
       <br />
-      <div class="div2 a4" style="display: inline-block";>
-        <a
-          class="ico"
-          href="https://www.bitbug.net/"
-          target="_blank"
-        ></a>
+      <div class="div2 a4" style="display: inline-block" ;>
+        <a class="ico" href="https://www.bitbug.net/" target="_blank"></a>
         <span class="mask"></span>
         <span class="title">图片转ICO工具</span>
-      </div>      
+      </div>
       <!-- <div><a class="ico" href="https://www.bitbug.net/">图片转ICO工具</a></div> -->
       <div><a href=""></a></div>
       <div><a href=""></a></div>
@@ -203,6 +220,21 @@
       const a4 = document.querySelector(".a4");
       a4.addEventListener("click", function (e) {
         window.location.href = "https://www.bitbug.net/";
+      });
+      // 移植的二进制转十进制JS代码
+      let va = 0;
+      let num1 = 0;
+      let put = 0;
+      // 获取按钮，给按钮加上点击之后效果(获取里面的字符串)
+      const btnSum = document.querySelector(".btnSum");
+      btnSum.addEventListener("click", function (e) {
+        va = document.querySelector(".va").value;
+        // 二进制转十进制
+        num1 = parseInt(va, 2);
+        // 获取输出元素
+        put = document.querySelector(".put");
+        // 渲染输出元素
+        put.innerHTML = num1;
       });
     </script>
   </body>
