@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/background-img/background-img.jpg);
+  background-image: url(../images/background-img/background-img.webp);
 }
 header {
   margin: 0 auto;
@@ -14,7 +14,7 @@ main {
   display: inline-block;
   width: 200px;
   height: 200px;
-  background-image: url(../images/background-img/tools.png);
+  background-image: url(../images/background-img/tools.webp);
 }
 .cssDaoHang {
   text-align: center;
