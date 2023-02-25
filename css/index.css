@@ -1,12 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   background-image: url(../images/background-img/background-img.webp);
+  background-repeat: repeat;
 }
 header {
   margin: 0 auto;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+}
+header .head {
+  display:block;
+  width: 100%;
+  height: 34px;
+  background-color: #3d4557;
+}
+header .head .link {
+  padding-left: 25%;
+  height: 100%;
+  margin: 0 auto;
+}
+header .head .link .left {
+  height: 34px;
+  float: left;
+  line-height: 34px;
+  font-size:12px;
+}
+/* 超链接 */
+header .head .link .left a {
+  color:white;
+  text-decoration: none;
+}
+.header .head .link .right {
+  height: 34px;
+  float: right;
 }
 main {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 15px;
+  line-height: 1.7;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .boxshadom {
@@ -15,6 +51,8 @@ main {
   width: 200px;
   height: 200px;
   background-image: url(../images/background-img/tools.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .cssDaoHang {
   text-align: center;
@@ -33,7 +71,8 @@ main {
   display: inline-block;
   width: 200px;
   height: 200px;
-  background-image: url(../images/background-img/qianDuan.webp);
+  background-image: url(../images/background-img/qianDuan.jpg);
+
 }
 .div2 .mask {
   position: absolute;
@@ -68,7 +107,9 @@ main .div2 {
   display: inline-block;
   width: 200px;
   height: 200px;
-  background-image: url(../images/background-img/icon_214x134.webp);
+  background-image: url(../images/background-img/icon_214x134.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .ico {
   margin: 0 auto;
@@ -77,7 +118,7 @@ main .div2 {
   display: inline-block;
   width: 200px;
   height: 200px;
-  background-image: url(../images/background-img/ico.webp);
+  background-image: url(../images/background-img/ico.png);
 }
 h3 {
   text-align: center;
@@ -92,12 +133,18 @@ h3 {
 }
 header h1 {
   display: inline-block;
-  position: relative;
+
+  height: 55px;
+  line-height: 55px;
+}
+input[name="text"] {
+  margin-left: 50px;
 }
 .time {
   position: absolute;
   top: 2%;
   right: 10%;
+  color:#ffffff;
 }
 .foot {
   width: 100%;
@@ -110,10 +157,10 @@ header h1 {
 }
 @keyframes identifier {
   from {
-    background-image: url(../images/background-img/ico.webp);
+    background-image: url(../images/background-img/ico.png);
   }
   to {
-    background-image: url(../images/background-img/qianDuan.webp);
+    background-image: url(../images/background-img/qianDuan.jpg);
   }
 }
 .input {
@@ -138,4 +185,29 @@ header h1 {
 .s2 {
   display: inline-block;
   margin-left: 50px;
+}
+.sonForest {
+  position: relative;
+}
+.sonForest a {
+  display: inline-block;
+  margin: 0 auto;
+  margin-left: 17%;
+}
+.sonForest > a >img {
+  vertical-align: top;
+}
+.sonForest > div{
+  text-align: center;
+  color:blue;
+  font-weight: 900;
+}
+.sonForest .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 247px;
+  cursor: pointer;
+
 }
