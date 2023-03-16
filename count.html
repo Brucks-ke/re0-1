@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num_one">
+        第1个数字<input type="text" id="num_one">
+    </label>
+    <br>
+    <select name="character" id="character">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*" selected>*</option>
+        <option value="/">/</option>
+    </select>
+    <br>
+    <label for="num_two">
+        第2个数字<input type="text" id="num_two">
+    </label>
+    <div class="result"></div>
+    <button type="button" id="countBtn">计算</button>
+
+    <script>
+        // 第一个数字
+        let num_one_e = document.querySelector("#num_one")
+        // 第二个数字
+        let num_two_e = document.querySelector("#num_two")
+        // 基本运算符
+        let character_e = document.querySelector("select[name='character']")
+
+        // 结果显示
+        let result_e = document.querySelector(".result")
+        // 计算按钮
+        let countBtn_e = document.querySelector("#countBtn")
+        
+        countBtn_e.addEventListener("click",e=>{
+            let num1 = parseFloat(num_one_e.value)
+            let num2 = parseFloat(num_two_e.value)
+            let characters = character_e.value
+            console.log(typeof num1);
+            console.log(typeof num2);
+            let sum = 0
+            if(characters == "+"){
+                sum = num1 + num2
+                result_e.innerHTML = sum
+            }else if(characters == "-" ){
+                sum = num1 - num2
+                result_e.innerHTML = sum
+            }else if(characters == "*" ){
+                sum = num1 * num2
+                result_e.innerHTML = sum
+            }else{
+                sum = num1 / num2
+                result_e.innerHTML = sum
+            }
+            
+        })
+    </script>
+</body>
+</html>
